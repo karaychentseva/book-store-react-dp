@@ -1,0 +1,23 @@
+.header {
+    padding: 20px;
+    position: sticky;
+    top: 0;
+
+    &-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 -15px;
+    }
+
+    &-title {
+        display: flex;
+        align-items: center;
+        
+        &__logo {
+            height: 35px;
+            width: 35px;
+            margin-right: 15px;
+        }
+    }
+}

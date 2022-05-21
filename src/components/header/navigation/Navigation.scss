@@ -1,0 +1,25 @@
+.header-navigation-wrap {
+    margin: 0 15px;
+}
+
+.header-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__item-link {
+        text-transform: capitalize;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 20px;
+        padding: 3px;
+        border-left: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+    
+        &:hover {
+            border-bottom: 2px solid var(--primary-color);
+            transition: 0.2s;
+        }
+    }
+}
