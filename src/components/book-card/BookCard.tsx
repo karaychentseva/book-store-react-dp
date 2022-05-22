@@ -1,24 +1,22 @@
 import React from "react";
+import { BookCardType } from "../../types/BookCardType";
 import "./BookCard.scss";
 
 type PropsType = {
-    img: string,
-    title: string,
-    subtitle: string,
-    price: string
+    data: BookCardType
 }
 
-const BookCard: React.FC<PropsType> = ({img, title, subtitle, price}) => {
+const BookCard: React.FC<PropsType> = ({data}) => {
 
     return (
         <div className="book-card">
             <div className="book-card__img">
-                <img src={img} className='book-card__img-item' />
+                <img src={data.image} className='book-card__img-item' />
             </div>
-            <h4 className="book-card__title">{title}</h4>
-            <p className="book-card__subtitle">{subtitle}</p>
+            <h4 className="book-card__title">{data.title}</h4>
+            <p className="book-card__subtitle">{data.subtitle}</p>
             <div className="book-card__controls-row">
-                <span className="book-card__price">{price}</span>
+                <span className="book-card__price">{data.price}</span>
             </div>
         </div>
     )
