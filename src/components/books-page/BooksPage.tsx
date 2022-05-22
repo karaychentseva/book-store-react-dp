@@ -37,14 +37,14 @@ const BooksPage: React.FC<PropsType> = () => {
             {
                 "title": "Programming iOS 11",
                 "subtitle": "Dive Deep into Views, View Controllers, and Frameworks",
-                "isbn13": "9781491999226",
+                "isbn13": "97814919992262",
                 "price": "$59.17",
                 "image": "https://itbook.store/img/books/9781491999226.png",
                 "url": "https://itbook.store/books/9781491999226"
             },
         ]
     };
-
+    const newBooks = data.books.map(book => <BookCard key={book.isbn13} data={book} />);
     return (
         <section className="books-page">
             <div className="container">
@@ -52,10 +52,7 @@ const BooksPage: React.FC<PropsType> = () => {
                     New Books ({data.total})
                 </h2>
                 <div className="books-wrap">
-                    <BookCard data={data.books[0]} />
-                    <BookCard data={data.books[1]} />
-                    <BookCard data={data.books[2]} />
-                    <BookCard data={data.books[3]} />
+                    {newBooks}
                 </div>
             </div>
         </section>
