@@ -1,55 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BookCard from "../book-card/BookCard";
+import { BookCardType } from "../../types/BookCardType";
 import "./BooksPage.scss";
+
+const newBooksUrl = "https://api.itbook.store/1.0/new";
 
 type PropsType = {
 }
 
 const BooksPage: React.FC<PropsType> = () => {
 
-    const data = {
-        "total": "20",
-        "books": [
-            {
-                "title": "Designing Across Senses",
-                "subtitle": "A Multimodal Approach to Product Design",
-                "isbn13": "9781491954249",
-                "price": "$27.59",
-                "image": "https://itbook.store/img/books/9781491954249.png",
-                "url": "https://itbook.store/books/9781491954249"
-            },
-            {
-                "title": "Web Scraping with Python, 2nd Edition",
-                "subtitle": "Collecting More Data from the Modern Web",
-                "isbn13": "9781491985571",
-                "price": "$33.99",
-                "image": "https://itbook.store/img/books/9781491985571.png",
-                "url": "https://itbook.store/books/9781491985571"
-            },
-            {
-                "title": "Programming iOS 11",
-                "subtitle": "Dive Deep into Views, View Controllers, and Frameworks",
-                "isbn13": "9781491999226",
-                "price": "$59.17",
-                "image": "https://itbook.store/img/books/9781491999226.png",
-                "url": "https://itbook.store/books/9781491999226"
-            },
-            {
-                "title": "Programming iOS 11",
-                "subtitle": "Dive Deep into Views, View Controllers, and Frameworks",
-                "isbn13": "97814919992262",
-                "price": "$59.17",
-                "image": "https://itbook.store/img/books/9781491999226.png",
-                "url": "https://itbook.store/books/9781491999226"
-            },
-        ]
-    };
-    const newBooks = data.books.map(book => <BookCard key={book.isbn13} data={book} />);
+    const [books, setBooks] = useState<BookCardType[]>([]);
+    const [total, setTotal] = useState("Loading...");
+
+    const fetchData = () => {
+        fetch(newBooksUrl)
+            .then((response) => response.json())
+            .then((json) => {
+                setBooks(json.books);
+                setTotal(json.total);
+            })
+            .catch(() => {
+                console.log("Error");
+            })
+            .finally(() => {
+                console.log("Finish loading");
+            });
+    }
+
+    useEffect(() => {
+        setTimeout(fetchData, 1000);
+    }, []);
+
+    const newBooks = books.map(book => <BookCard key={book.isbn13} data={book} />);
     return (
         <section className="books-page">
             <div className="container">
                 <h2 className="page-title">
-                    New Books ({data.total})
+                    New Books ({total})
                 </h2>
                 <div className="books-wrap">
                     {newBooks}
