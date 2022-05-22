@@ -1,6 +1,6 @@
 .page-title {
     margin-top: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     font-size: 35px;
 }
 
@@ -8,4 +8,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    .book-card {
+        max-width: 24%;
+        min-width: 24%;
+        margin: 0;
+        margin-bottom: 15px;
+    }
 }
