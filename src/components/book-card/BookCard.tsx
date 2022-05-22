@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { BookCardType } from "../../types/BookCardType";
 import "./BookCard.scss";
 
@@ -7,9 +8,13 @@ type PropsType = {
 }
 
 const BookCard: React.FC<PropsType> = ({data}) => {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate(`/books/${data.isbn13}`);
+    }
 
     return (
-        <div className="book-card">
+        <div className="book-card" onClick={handleClick}>
             <div className="book-card__img">
                 <img src={data.image} className='book-card__img-item' />
             </div>
