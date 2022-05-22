@@ -2,6 +2,9 @@
     padding: 20px;
     position: sticky;
     top: 0;
+    border-bottom: 1px solid #dddddd;
+    z-index: 3;
+    background-color: #e1f3ff;
 
     &-wrap {
         display: flex;
