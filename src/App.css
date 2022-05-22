@@ -44,3 +44,9 @@
   z-index: 2;
   position: relative;
 }
+
+.page-title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 35px;
+}
