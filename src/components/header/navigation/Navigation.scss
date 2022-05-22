@@ -7,19 +7,27 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-    &__item-link {
-        text-transform: capitalize;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 1rem;
-        line-height: 20px;
-        padding: 3px;
-        border-left: 2px solid transparent;
-        border-bottom: 2px solid transparent;
-    
-        &:hover {
-            border-bottom: 2px solid var(--primary-color);
-            transition: 0.2s;
+    &__item {
+        margin-right: 20px;
+        
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &-link {
+            text-transform: capitalize;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            padding: 3px;
+            border-left: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+        
+            &:hover {
+                border-bottom: 2px solid var(--primary-color);
+                transition: 0.2s;
+            }
         }
     }
 }
