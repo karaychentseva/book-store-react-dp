@@ -7,19 +7,35 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-    &__item-link {
-        text-transform: capitalize;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 1rem;
-        line-height: 20px;
-        padding: 3px;
+    &__item {
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
         border-left: 2px solid transparent;
         border-bottom: 2px solid transparent;
-    
+        padding-bottom: 5px;
+        
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &-link {
+            text-transform: capitalize;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            padding: 3px;
+        }
+        
         &:hover {
             border-bottom: 2px solid var(--primary-color);
             transition: 0.2s;
         }
+    }
+
+    .navigation-icon {
+        width: 25px;
+        height: 25px;
     }
 }

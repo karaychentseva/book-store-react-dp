@@ -1,0 +1,91 @@
+.book-page {
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.book-title {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    &__main {
+        font-size: 24px;
+        margin-bottom: 4px;
+    }
+
+    &__secondary {
+        font-size: 16px;
+        color: #858585;
+    }
+
+    .add-bookmark-icon {
+        cursor: pointer;
+        path {
+            fill: #929292;
+        }
+    }
+
+    .remove-bookmark-icon {
+        cursor: pointer;
+        path {
+            fill: #d88a00;
+        }
+    }
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    
+
+    &-image {
+        max-width: 35%;
+        min-width: 35%;
+        width: 544px;
+        border: 1px solid #ddd;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &-info {
+        max-width: 55%;
+        min-width: 55%;
+
+        text-align: left;
+        width: 448px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        
+        &-list {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Raleway';
+        }
+
+        &-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+
+            &__key {
+                color: #858585;
+            }
+        }
+
+        &__price {
+            font-weight: 600;
+            color: rgb(40, 83, 107);
+            font-size: 20px;
+        }
+    }
+}
+
+.description {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-family: 'Raleway';
+}

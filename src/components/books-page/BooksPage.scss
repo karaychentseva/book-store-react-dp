@@ -1,0 +1,12 @@
+.books-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .book-card {
+        max-width: 24%;
+        min-width: 24%;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+}

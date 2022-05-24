@@ -2,6 +2,9 @@
     padding: 20px;
     position: sticky;
     top: 0;
+    border-bottom: 1px solid #dddddd;
+    z-index: 3;
+    background-color: #e1f3ff;
 
     &-wrap {
         display: flex;
@@ -13,6 +16,9 @@
     &-title {
         display: flex;
         align-items: center;
+        font-family: 'Rubik';
+        font-size: 24px;
+        font-weight: 500;
         
         &__logo {
             height: 35px;
