@@ -3,6 +3,7 @@ import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 import BookmarkRemoveIcon from '@mui/icons-material/BookmarkRemove';
 import "./BookDetailsPage.scss";
 import { useState } from "react";
+import { useActions } from "../../hooks/useActions"
 
 type PropsType = {
 }
@@ -31,12 +32,16 @@ const BookDetailsPage: React.FC<PropsType> = () => {
 
     const [bookmarked, setBookmarked] = useState(false);
 
+    const { addBookmark, removeBookmark } = useActions();
+
     const clickBookmark = () => {
         if (bookmarked) {
             setBookmarked(false);
+            removeBookmark();
         }
         else {
             setBookmarked(true);
+            addBookmark();
         }
     }
 
