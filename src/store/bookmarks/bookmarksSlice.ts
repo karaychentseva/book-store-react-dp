@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { BookCardType } from "../../types/BookCardType";
 
 type StoreType = {
-    books: string[]
+    books: BookCardType[]
 }
 
 const initialState: StoreType = {
@@ -12,11 +13,11 @@ const bookmarksSlice = createSlice({
     name: "bookmarks",
     initialState,
     reducers: {
-        addBookmark: (state, { payload: isbn13 }: PayloadAction<string>) => {
-            state.books.push(isbn13);
+        addBookmark: (state, { payload: bookCard }: PayloadAction<BookCardType>) => {
+            state.books.push(bookCard);
         },
         removeBookmark: (state, { payload: isbn13 }: PayloadAction<string>) => {
-            state.books = state.books.filter(book => book != isbn13);
+            state.books = state.books.filter(book => book.isbn13 != isbn13);
         },
     },
 });
