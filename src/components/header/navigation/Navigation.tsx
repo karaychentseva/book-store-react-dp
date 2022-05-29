@@ -9,7 +9,7 @@ type PropsType = {
 
 const Header: React.FC<PropsType> = () => {
 
-    const bookmarksCount = useSelector((state: any) => state.bookmarks.count);
+    const bookmarksCount = useSelector((state: any) => state.bookmarks.books.length);
     return (
         <nav className="header-navigation-wrap">
             <ul className="header-navigation">

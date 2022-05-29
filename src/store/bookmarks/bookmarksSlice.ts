@@ -1,22 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 type StoreType = {
-    count: number,
+    books: string[]
 }
 
 const initialState: StoreType = {
-    count: 0,
+    books: []
 }
 
 const bookmarksSlice = createSlice({
     name: "bookmarks",
     initialState,
     reducers: {
-        addBookmark: (state) => {
-            state.count++;
+        addBookmark: (state, { payload: isbn13 }: PayloadAction<string>) => {
+            state.books.push(isbn13);
         },
-        removeBookmark: (state) => {
-            state.count--;
+        removeBookmark: (state, { payload: isbn13 }: PayloadAction<string>) => {
+            state.books = state.books.filter(book => book != isbn13);
         },
     },
 });

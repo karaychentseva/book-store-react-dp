@@ -2,7 +2,7 @@ import { BookDetailsType } from "../../types/BookDetailsType";
 import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 import BookmarkRemoveIcon from '@mui/icons-material/BookmarkRemove';
 import "./BookDetailsPage.scss";
-import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useActions } from "../../hooks/useActions"
 
 type PropsType = {
@@ -30,18 +30,17 @@ const BookDetailsPage: React.FC<PropsType> = () => {
                }
     };
 
-    const [bookmarked, setBookmarked] = useState(false);
+    const bookmarkedBooks = useSelector((state: any) => state.bookmarks.books);
+    const bookmarked = bookmarkedBooks.includes(data.isbn13);
 
     const { addBookmark, removeBookmark } = useActions();
 
     const clickBookmark = () => {
         if (bookmarked) {
-            setBookmarked(false);
-            removeBookmark();
+            removeBookmark(data.isbn13);
         }
         else {
-            setBookmarked(true);
-            addBookmark();
+            addBookmark(data.isbn13);
         }
     }
 
