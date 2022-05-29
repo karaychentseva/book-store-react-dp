@@ -5,8 +5,16 @@ type StoreType = {
     books: BookCardType[]
 }
 
+let storedBooks : BookCardType[] = [];
+try {
+    storedBooks = JSON.parse(localStorage.getItem('bookmarks') || '[]') as BookCardType[];
+}
+catch {
+    localStorage.setItem('bookmarks', '[]');
+}
+
 const initialState: StoreType = {
-    books: []
+    books: storedBooks,
 }
 
 const bookmarksSlice = createSlice({
@@ -15,9 +23,11 @@ const bookmarksSlice = createSlice({
     reducers: {
         addBookmark: (state, { payload: bookCard }: PayloadAction<BookCardType>) => {
             state.books.push(bookCard);
+            localStorage.setItem('bookmarks', JSON.stringify(state.books));
         },
         removeBookmark: (state, { payload: isbn13 }: PayloadAction<string>) => {
             state.books = state.books.filter(book => book.isbn13 != isbn13);
+            localStorage.setItem('bookmarks', JSON.stringify(state.books));
         },
     },
 });
