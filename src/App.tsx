@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/books" >
             <Route index element={<BooksPage/>} />
-            <Route path=":id" element={<BookDetailsPage/>} />
+            <Route path=":isbn13" element={<BookDetailsPage/>} />
           </Route>
           <Route path="*" element={<Navigate to={"/books"}/>} />
         </Routes>
