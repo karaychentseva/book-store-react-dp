@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import BookCard from "../book-card/BookCard";
 import { BookCardType } from "../../types/BookCardType";
-import "./BooksPage.scss";
+import BookCardsListing from "../book-cards-listing/BookCardsListing";
 
 const newBooksUrl = "https://api.itbook.store/1.0/new";
 
@@ -32,18 +31,10 @@ const BooksPage: React.FC<PropsType> = () => {
         setTimeout(fetchData, 1000);
     }, []);
 
-    const newBooks = books.map(book => <BookCard key={book.isbn13} data={book} />);
+    const title = `New books (${total})`;
+
     return (
-        <section className="books-page">
-            <div className="container">
-                <h2 className="page-title">
-                    New Books ({total})
-                </h2>
-                <div className="books-wrap">
-                    {newBooks}
-                </div>
-            </div>
-        </section>
+        <BookCardsListing title={title} books={books} />
     )
 }
 

@@ -19,7 +19,7 @@ const Header: React.FC<PropsType> = () => {
                 </li>
                 <li className="header-navigation__item">
                     <BookmarksIcon className="navigation-icon" />
-                    <a href="#" className="header-navigation__item-link">
+                    <a href="/bookmarks" className="header-navigation__item-link">
                         Bookmarks ({bookmarksCount})
                     </a>
                 </li>
