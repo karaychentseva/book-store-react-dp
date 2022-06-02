@@ -18,7 +18,10 @@ const BookDetailsPage: React.FC<PropsType> = () => {
     const error = useSelector(state  => state.book.error);
 
     useEffect(() => {
-        fetchBook(isbn13 || '');
+        if(isbn13)
+        {
+            fetchBook(isbn13);
+        }
     }, []);
 
     const bookmarkedBooks = useSelector(state => state.bookmarks.books);

@@ -8,8 +8,8 @@ type StoreType = {
     error: boolean
 }
 
-const getDefaultData = () => {
-    return {
+const initialState: StoreType = {
+    data: {
         error: '',
         title: '',
         subtitle: '',
@@ -24,11 +24,7 @@ const getDefaultData = () => {
         price: '',
         image: '',
         url: '',
-    };
-}
-
-const initialState: StoreType = {
-    data: getDefaultData(),
+    },
     loading: true,
     error: false,
 }
@@ -42,7 +38,6 @@ const bookSlice = createSlice({
         builder.addCase(fetchBook.pending, (state) => {
             state.loading = true;
             state.error = false;
-            state.data = getDefaultData();
         });
 
         builder.addCase(fetchBook.rejected, (state) => {
