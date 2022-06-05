@@ -1,0 +1,19 @@
+.search-filter {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+    .search-row {
+        .search-btn {
+            margin-left: 25px;
+            font-size: 12px;
+            line-height: 26px;
+        }
+        margin-bottom: 15px;
+    }
+    .pagination-row {
+        display: flex;
+        justify-content: space-around;
+    }
+}

@@ -7,7 +7,8 @@ type StoreType = {
     filter: SearchFilterType,
     data: SearchResultType,
     loading: boolean,
-    error: boolean
+    error: boolean,
+    errorText: string
 }
 
 const initialState: StoreType = {
@@ -20,8 +21,9 @@ const initialState: StoreType = {
         total: 0,
         books: [],
     },
-    loading: true,
+    loading: false,
     error: false,
+    errorText: '',
 }
 
 const searchBooksSlice = createSlice({
@@ -33,7 +35,6 @@ const searchBooksSlice = createSlice({
         },
         setQuery: (state, { payload: query }: PayloadAction<string>) => {
             state.filter.query = query;
-            console.log('query: ' + query);
         }
     },
     extraReducers: builder => {
@@ -42,9 +43,10 @@ const searchBooksSlice = createSlice({
             state.error = false;
         });
 
-        builder.addCase(searchBooks.rejected, (state) => {
+        builder.addCase(searchBooks.rejected, (state, { payload }) => {
             state.loading = false;
             state.error = true;
+            state.errorText = payload || '';
         });
 
         builder.addCase(searchBooks.fulfilled, (state, { payload }) => {

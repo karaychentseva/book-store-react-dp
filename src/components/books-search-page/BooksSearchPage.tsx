@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import BookCardsListing from "../book-cards-listing/BookCardsListing";
 import { useSelector } from "../../hooks/useSelector";
-import { useActions } from "../../hooks/useActions";
 import SearchFilter from "./SearchFilter";
 
 type PropsType = {
@@ -9,21 +8,21 @@ type PropsType = {
 
 const BooksSearchPage: React.FC<PropsType> = () => {
 
-    const filter = useSelector(state => state.searchBooks.filter);
     const data = useSelector(state => state.searchBooks.data);
-    const { searchBooks } = useActions();
+    const loading = useSelector(state => state.searchBooks.loading);
+    const error = useSelector(state => state.searchBooks.error);
+    const errorText = useSelector(state => state.searchBooks.errorText);
+    let title = `Searched books (${loading ? "Loading..." : data.total})`;
 
-    useEffect(() => {
-        searchBooks(filter);
-    }, [filter.page]);
+    if (error) {
+        title = errorText;
+    }
 
-    const title = `Searched books (${data.total})`;
     return (
-        <div>
+        <div className="search-page">
             <SearchFilter />
             <BookCardsListing title={title} books={data.books} />
         </div>
-        
     )
 }
 
