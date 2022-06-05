@@ -12,7 +12,7 @@ const BooksSearchPage: React.FC<PropsType> = () => {
     const loading = useSelector(state => state.searchBooks.loading);
     const error = useSelector(state => state.searchBooks.error);
     const errorText = useSelector(state => state.searchBooks.errorText);
-    let title = `Searched books (${loading ? "Loading..." : data.total})`;
+    let title = `Found books (${loading ? "Loading..." : data.total})`;
 
     if (error) {
         title = errorText;
