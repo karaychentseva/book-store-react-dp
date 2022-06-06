@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { BookCardType } from "../../types/BookCardType";
 import { NewBooksResultType } from "../../types/NewBooksResultType";
 import { getNewBooks } from "./newBooksThunk";
 
@@ -30,13 +31,13 @@ const newBooksSlice = createSlice({
             state.error = false;
         });
 
-        builder.addCase(getNewBooks.rejected, (state, { payload }) => {
+        builder.addCase(getNewBooks.rejected, (state, { payload } : PayloadAction<string| undefined>) => {
             state.loading = false;
             state.error = true;
             state.errorText = payload || '';
         });
 
-        builder.addCase(getNewBooks.fulfilled, (state, { payload }) => {
+        builder.addCase(getNewBooks.fulfilled, (state, { payload } : PayloadAction<NewBooksResultType>) => {
             state.loading = false;
             state.error = false;
             state.data = payload;

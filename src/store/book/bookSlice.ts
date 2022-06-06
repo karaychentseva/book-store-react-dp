@@ -45,7 +45,7 @@ const bookSlice = createSlice({
             state.error = true;
         });
 
-        builder.addCase(fetchBook.fulfilled, (state, { payload }) => {
+        builder.addCase(fetchBook.fulfilled, (state, { payload } : PayloadAction<BookDetailsType>) => {
             state.loading = false;
             state.error = false;
             state.data = payload;
