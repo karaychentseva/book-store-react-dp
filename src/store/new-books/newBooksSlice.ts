@@ -31,7 +31,7 @@ const newBooksSlice = createSlice({
             state.error = false;
         });
 
-        builder.addCase(getNewBooks.rejected, (state, { payload } : PayloadAction<string| undefined>) => {
+        builder.addCase(getNewBooks.rejected, (state, { payload } : PayloadAction<string | undefined>) => {
             state.loading = false;
             state.error = true;
             state.errorText = payload || '';
