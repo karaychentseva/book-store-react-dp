@@ -15,7 +15,7 @@ const Header: React.FC<PropsType> = () => {
             <ul className="header-navigation">
                 <li className="header-navigation__item">
                     <SearchIcon className="navigation-icon" />
-                    <a href="#" className="header-navigation__item-link" >Search</a>
+                    <a href="/search" className="header-navigation__item-link" >Search</a>
                 </li>
                 <li className="header-navigation__item">
                     <BookmarksIcon className="navigation-icon" />
