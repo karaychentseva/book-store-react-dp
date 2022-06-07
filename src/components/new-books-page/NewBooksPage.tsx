@@ -15,7 +15,7 @@ const NewBooksPage: React.FC<PropsType> = () => {
     const errorText = useSelector(state => state.newBooks.errorText);
 
     useEffect(() => {
-        getNewBooks('');
+        getNewBooks();
     }, []);
 
     let title = `New books (${loading ? "Loading..." : data.total})`;

@@ -3,7 +3,7 @@ import api from '../../helpers/api';
 import { NewBooksResultType } from '../../types/NewBooksResultType';
 
 
-export const getNewBooks = createAsyncThunk<NewBooksResultType, any, { rejectValue: string }>(
+export const getNewBooks = createAsyncThunk<NewBooksResultType, undefined, { rejectValue: string }>(
     "book/new",
     async (_, thunkApi) => {
         try {

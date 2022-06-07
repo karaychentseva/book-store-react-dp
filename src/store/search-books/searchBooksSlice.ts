@@ -43,13 +43,13 @@ const searchBooksSlice = createSlice({
             state.error = false;
         });
 
-        builder.addCase(searchBooks.rejected, (state, { payload }) => {
+        builder.addCase(searchBooks.rejected, (state, { payload } : PayloadAction<string | undefined>) => {
             state.loading = false;
             state.error = true;
             state.errorText = payload || '';
         });
 
-        builder.addCase(searchBooks.fulfilled, (state, { payload }) => {
+        builder.addCase(searchBooks.fulfilled, (state, { payload } : PayloadAction<SearchResultType>) => {
             state.loading = false;
             state.error = false;
             state.data = payload;
