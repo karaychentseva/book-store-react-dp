@@ -27,4 +27,9 @@
             margin-right: 15px;
         }
     }
+
+    &-right {
+        display: flex;
+        align-items: flex-start;
+    }
 }

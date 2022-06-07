@@ -1,0 +1,11 @@
+.toggle-group  {
+    &-item.MuiToggleButton-sizeSmall
+    {
+        padding: 3px;
+        font-size: 12px;
+
+        &.Mui-selected {
+            background-color: rgb(25 118 210 / 20%);
+        }
+    }
+}

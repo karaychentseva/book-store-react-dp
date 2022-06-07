@@ -3,6 +3,7 @@ import React from "react";
 import { ReactComponent as Logo } from "../../assets/book-open-reader-solid.svg";
 import "./Header.scss";
 import Navigation from "./navigation/Navigation";
+import LangToggle from "./lang-toggle/LangToggle";
 
 type PropsType = {
     
@@ -26,9 +27,11 @@ const Header: React.FC<PropsType> = () => {
                             IT-Book Store
                         </div>
                     </div>
-                    <Navigation />
+                    <div className="header-right">
+                        <Navigation />
+                        <LangToggle />
+                    </div>
                 </div>
-
             </div>
         </header>
     )
