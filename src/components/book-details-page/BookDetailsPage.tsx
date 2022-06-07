@@ -5,6 +5,7 @@ import { useSelector } from "../../hooks/useSelector";
 import { useActions } from "../../hooks/useActions"
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useTranslate } from '../../hooks/useTranslate';
 
 type PropsType = {
 }
@@ -12,6 +13,7 @@ type PropsType = {
 const BookDetailsPage: React.FC<PropsType> = () => {
     const { isbn13 } = useParams();
     const { fetchBook } = useActions();
+    const t = useTranslate();
     
     const data = useSelector(state  => state.book.data);
     const loading = useSelector(state  => state.book.loading);
@@ -73,19 +75,19 @@ const BookDetailsPage: React.FC<PropsType> = () => {
                         </div>
                         <ul className="details-info-list">
                             <li className="details-info-item">
-                                <span className="details-info-item__key">Authors</span>
+                                <span className="details-info-item__key">{t('book-details-page.author')}</span>
                                 <span className="details-info-item__value">{data.authors}</span>
                             </li>
                             <li className="details-info-item">
-                                <span className="details-info-item__key">Publisher</span>
+                                <span className="details-info-item__key">{t('book-details-page.publisher')}</span>
                                 <span className="details-info-item__value">{data.publisher}</span>
                             </li>
                             <li className="details-info-item">
-                                <span className="details-info-item__key">Pages</span>
+                                <span className="details-info-item__key">{t('book-details-page.pages')}</span>
                                 <span className="details-info-item__value">{data.pages}</span>
                             </li>
                             <li className="details-info-item">
-                                <span className="details-info-item__key">Year</span>
+                                <span className="details-info-item__key">{t('book-details-page.year')}</span>
                                 <span className="details-info-item__value">{data.year}</span>
                             </li>
                         </ul>

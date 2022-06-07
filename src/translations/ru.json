@@ -1,0 +1,14 @@
+{
+    "title": "Магазин IT-книг",
+    "bookmarks-page.title": "Закладки",
+    "book-details-page.author": "Автор",
+    "book-details-page.publisher": "Издатель",
+    "book-details-page.pages": "Количество страниц",
+    "book-details-page.year": "Год издания",
+    "books-search-page.found": "Найдено книг",
+    "new-books-page.newBooks": "Новинки",
+    "loading": "Загрузка...",
+    "search-filter.search": "Поиск",
+    "navigation.search": "Поиск",
+    "navigation.bookmarks": "Закладки"
+}
