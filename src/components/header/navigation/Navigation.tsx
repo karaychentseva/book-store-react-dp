@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import SearchIcon from '@mui/icons-material/Search';
 import BookmarksIcon from '@mui/icons-material/Bookmarks';
 import "./Navigation.scss";
+import { useTranslate } from "../../../hooks/useTranslate";
 
 type PropsType = {
 }
@@ -10,17 +11,18 @@ type PropsType = {
 const Header: React.FC<PropsType> = () => {
 
     const bookmarksCount = useSelector((state: any) => state.bookmarks.books.length);
+    const t = useTranslate();
     return (
         <nav className="header-navigation-wrap">
             <ul className="header-navigation">
                 <li className="header-navigation__item">
                     <SearchIcon className="navigation-icon" />
-                    <a href="/search" className="header-navigation__item-link" >Search</a>
+                    <a href="/search" className="header-navigation__item-link" >{t('navigation.search')}</a>
                 </li>
                 <li className="header-navigation__item">
                     <BookmarksIcon className="navigation-icon" />
                     <a href="/bookmarks" className="header-navigation__item-link">
-                        Bookmarks ({bookmarksCount})
+                    {t('navigation.bookmarks')} ({bookmarksCount})
                     </a>
                 </li>
             </ul>

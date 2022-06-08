@@ -3,6 +3,8 @@ import React from "react";
 import { ReactComponent as Logo } from "../../assets/book-open-reader-solid.svg";
 import "./Header.scss";
 import Navigation from "./navigation/Navigation";
+import LangToggle from "./lang-toggle/LangToggle";
+import { useTranslate } from "../../hooks/useTranslate";
 
 type PropsType = {
     
@@ -10,6 +12,7 @@ type PropsType = {
 
 const Header: React.FC<PropsType> = () => {
     const navigate = useNavigate();
+    const t = useTranslate();
     const handleHeaderClick = () => {
         navigate(`/books/`);
     }
@@ -23,12 +26,14 @@ const Header: React.FC<PropsType> = () => {
                             <Logo className='header-title__logo-item'/>
                         </div>
                         <div className="header-title__text">
-                            IT-Book Store
+                            {t('title')}
                         </div>
                     </div>
-                    <Navigation />
+                    <div className="header-right">
+                        <Navigation />
+                        <LangToggle />
+                    </div>
                 </div>
-
             </div>
         </header>
     )

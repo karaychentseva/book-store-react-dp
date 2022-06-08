@@ -1,0 +1,14 @@
+{
+    "title": "IT-Book Store",
+    "bookmarks-page.title": "Bookmarks",
+    "book-details-page.author": "Author",
+    "book-details-page.publisher": "Publisher",
+    "book-details-page.pages": "Pages",
+    "book-details-page.year": "Year",
+    "books-search-page.found": "Found books",
+    "new-books-page.newBooks": "New books",
+    "loading": "Loading...",
+    "search-filter.search": "Search",
+    "navigation.search": "Search",
+    "navigation.bookmarks": "Bookmarks"
+}

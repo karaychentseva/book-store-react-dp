@@ -5,6 +5,7 @@ import { useSelector } from "../../hooks/useSelector";
 import { useActions } from "../../hooks/useActions";
 import { Pagination } from "@mui/material";
 import "./SearchFilter.scss";
+import { useTranslate } from "../../hooks/useTranslate";
 
 type PropsType = {
 }
@@ -15,6 +16,7 @@ const SearchFilter: React.FC<PropsType> = () => {
     const filter = useSelector(state => state.searchBooks.filter);
     const total = useSelector(state => state.searchBooks.data.total);
     const { setQuery, setPage, searchBooks } = useActions();
+    const t = useTranslate();
 
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setQuery(event.target.value);
@@ -32,7 +34,7 @@ const SearchFilter: React.FC<PropsType> = () => {
                 <TextField
                     size="small"
                     id="outlined-basic"
-                    label="Search"
+                    label={t('search-filter.search')}
                     variant="outlined"
                     onChange={handleSearchChange}
                 />
@@ -42,7 +44,7 @@ const SearchFilter: React.FC<PropsType> = () => {
                     onClick={handleSearchClick}
                     className="search-btn"
                 >
-                    Search
+                    {t('search-filter.search')}
                 </Button>
             </div>
             <div className="pagination-row">

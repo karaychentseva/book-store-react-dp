@@ -2,6 +2,7 @@ import React from "react";
 import BookCardsListing from "../book-cards-listing/BookCardsListing";
 import { useSelector } from "../../hooks/useSelector";
 import SearchFilter from "./SearchFilter";
+import { useTranslate } from "../../hooks/useTranslate";
 
 type PropsType = {
 }
@@ -12,7 +13,9 @@ const BooksSearchPage: React.FC<PropsType> = () => {
     const loading = useSelector(state => state.searchBooks.loading);
     const error = useSelector(state => state.searchBooks.error);
     const errorText = useSelector(state => state.searchBooks.errorText);
-    let title = `Found books (${loading ? "Loading..." : data.total})`;
+    
+    const t = useTranslate();
+    let title = `${t('books-search-page.found')} (${loading ? t('loading') : data.total})`;
 
     if (error) {
         title = errorText;
