@@ -4,15 +4,15 @@ Used API https://api.itbook.store/
 
 ## Example screenshots
 
-New books
+### New books
 
 ![New books](screenshots/new-books.png "New books")
 
-Search books
+### Search books
 
 ![Search](screenshots/search.png "Search")
 
-Book details
+### Book details
 
 ![Book details](screenshots/book-details.png "Book details")
 
