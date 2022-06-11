@@ -10,12 +10,13 @@ type PropsType = {
 const BooksSearchPage: React.FC<PropsType> = () => {
 
     const data = useSelector(state => state.searchBooks.data);
+    const total = useSelector(state => state.searchBooks.pageTotal);
     const loading = useSelector(state => state.searchBooks.loading);
     const error = useSelector(state => state.searchBooks.error);
     const errorText = useSelector(state => state.searchBooks.errorText);
     
     const t = useTranslate();
-    let title = `${t('books-search-page.found')} (${loading ? t('loading') : data.total})`;
+    let title = `${t('books-search-page.found')} (${loading ? t('loading') : total})`;
 
     if (error) {
         title = errorText;

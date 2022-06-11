@@ -14,7 +14,7 @@ const PAGE_LIMIT = 10;
 const SearchFilter: React.FC<PropsType> = () => {
 
     const filter = useSelector(state => state.searchBooks.filter);
-    const total = useSelector(state => state.searchBooks.data.total);
+    const total = useSelector(state => state.searchBooks.pageTotal);
     const { setQuery, setPage, searchBooks } = useActions();
     const t = useTranslate();
 
@@ -49,7 +49,7 @@ const SearchFilter: React.FC<PropsType> = () => {
             </div>
             <div className="pagination-row">
                 {
-                    total == 0
+                    total === 0
                      ?
                      <></>
                      :
