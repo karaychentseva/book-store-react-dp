@@ -13,7 +13,6 @@
         align-items: center;
         border-left: 2px solid transparent;
         border-bottom: 2px solid transparent;
-        padding-bottom: 5px;
         
         &:last-child {
             margin-right: 0;
@@ -23,7 +22,7 @@
             text-transform: capitalize;
             font-style: normal;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 1rem;
             line-height: 20px;
             padding: 3px;
             color: black;
@@ -38,5 +37,49 @@
     .navigation-icon {
         width: 25px;
         height: 25px;
+    }
+}
+
+@media (max-width: 900px) {
+    .header-navigation {
+        &__item {
+            &-link {
+                line-height: 18px;
+            }
+        }
+    
+        .navigation-icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+@media (max-width: 460px) {
+    .header-navigation {
+        &__item {
+            &-link {
+                .link-text {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .header-navigation-wrap {
+        margin: 0 2px;
+    }
+
+    .header-navigation {
+        &__item {
+            margin-right: 5px;
+            &-link {
+                .link-text {
+                    display: none;
+                }
+            }
+        }
     }
 }

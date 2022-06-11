@@ -17,12 +17,18 @@ const Header: React.FC<PropsType> = () => {
             <ul className="header-navigation">
                 <li className="header-navigation__item">
                     <SearchIcon className="navigation-icon" />
-                    <a href="/search" className="header-navigation__item-link" >{t('navigation.search')}</a>
+                    <a href="/search" className="header-navigation__item-link" >
+                        <span className="link-text">
+                            {t('navigation.search')}
+                        </span>
+                    </a>
                 </li>
                 <li className="header-navigation__item">
                     <BookmarksIcon className="navigation-icon" />
                     <a href="/bookmarks" className="header-navigation__item-link">
-                    {t('navigation.bookmarks')} ({bookmarksCount})
+                        <span className="link-text">
+                            {t('navigation.bookmarks')} ({bookmarksCount})
+                        </span>
                     </a>
                 </li>
             </ul>

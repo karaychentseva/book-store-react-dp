@@ -16,3 +16,30 @@
         flex: auto;
       }
 }
+
+@media (max-width: 900px) {
+    .books-wrap {
+        .book-card {
+            max-width: 31%;
+        }
+    }
+}
+
+@media (max-width: 570px) {
+    .books-wrap {
+        .book-card {
+            max-width: 48%;
+        }
+    }
+}
+
+@media (max-width: 460px) {
+    .books-wrap {
+    justify-content: center;
+        .book-card {
+            max-width: 90%;
+            margin-right: 5%;
+            margin-left: 5%;
+        }
+    }
+}

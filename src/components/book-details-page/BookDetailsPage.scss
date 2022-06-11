@@ -9,12 +9,12 @@
     justify-content: space-between;
 
     &__main {
-        font-size: 24px;
+        font-size: 1.5rem;
         margin-bottom: 4px;
     }
 
     &__secondary {
-        font-size: 16px;
+        font-size: 1rem;
         color: #858585;
     }
 
@@ -40,7 +40,6 @@
 
     &-image {
         max-width: 35%;
-        min-width: 35%;
         width: 544px;
         border: 1px solid #ddd;
 
@@ -51,7 +50,6 @@
 
     &-info {
         max-width: 55%;
-        min-width: 55%;
 
         text-align: left;
         width: 448px;
@@ -78,7 +76,7 @@
         &__price {
             font-weight: 600;
             color: rgb(40, 83, 107);
-            font-size: 20px;
+            font-size: 1.25rem;
         }
     }
 }
@@ -88,4 +86,27 @@
     margin-bottom: 20px;
     text-align: left;
     font-family: 'Raleway';
+}
+
+@media (max-width: 460px) {
+    .book-title {
+        margin-bottom: 0;
+    }
+    
+    .details {
+        display: block;
+    
+        &-image {
+            max-width: initial;
+            width: initial;
+
+            margin-bottom: 20px;
+        }
+    
+        &-info {
+            max-width: initial;
+            width: initial;
+            gap: 15px;
+        }
+    }
 }

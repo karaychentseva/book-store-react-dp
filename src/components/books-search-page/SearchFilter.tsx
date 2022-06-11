@@ -6,6 +6,7 @@ import { useActions } from "../../hooks/useActions";
 import { Pagination } from "@mui/material";
 import "./SearchFilter.scss";
 import { useTranslate } from "../../hooks/useTranslate";
+import { useEffect } from "react";
 
 type PropsType = {
 }
@@ -54,6 +55,8 @@ const SearchFilter: React.FC<PropsType> = () => {
                      <></>
                      :
                     <Pagination 
+                        defaultPage={5}
+                        siblingCount={0}
                         className='pagination'
                         page={filter.page}
                         onChange={handleChangePage}
