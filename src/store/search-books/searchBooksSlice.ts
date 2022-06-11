@@ -59,7 +59,7 @@ const searchBooksSlice = createSlice({
             if (state.data.total > 1000) {
                 state.pageTotal = 1000;
             } else {
-                state.pageTotal = state.data.total;
+                state.pageTotal = Number(state.data.total);
             }
         });
     }

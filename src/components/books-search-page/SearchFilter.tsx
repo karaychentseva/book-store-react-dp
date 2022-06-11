@@ -19,12 +19,15 @@ const SearchFilter: React.FC<PropsType> = () => {
     const { setQuery, setPage, searchBooks } = useActions();
     const t = useTranslate();
 
+    useEffect(() => {
+        searchBooks(filter);
+    }, [filter.page]);
+
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setQuery(event.target.value);
     }
     const handleChangePage = (event: React.ChangeEvent<unknown>, value: number) => {
         setPage(value);
-        searchBooks(filter);
     }
     const handleSearchClick = () => {
         searchBooks(filter);
