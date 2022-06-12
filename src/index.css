@@ -23,6 +23,7 @@ body {
   --search-btn-background-color: #1976d2;
   --search-btn-background-hover-color: #1565c0;
   --text-field-background-color: #ffffff;
+  --text-field-border-color: #1565c0;
 }
 
 body[data-theme="dark"] {
@@ -43,6 +44,7 @@ body[data-theme="dark"] {
   --search-btn-background-color: #296c7f;
   --search-btn-background-hover-color: #317b90;
   --text-field-background-color: #56606d;
+  --text-field-border-color: transparent;
 }
 
 body {
