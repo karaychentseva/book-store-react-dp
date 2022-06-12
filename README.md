@@ -16,6 +16,20 @@ Used API https://api.itbook.store/
 
 ![Book details](screenshots/book-details.png "Book details")
 
+Book details (mobile dark)
+
+![Book details (mobile dark)](screenshots/details-mobile-dark.png "Book details (mobile dark)")
+
+### Bookmarks
+
+Bookmarks (dark)
+
+![Bookmarks (dark)](screenshots/bookmarks-dark.png "Bookmarks (dark)")
+
+Bookmarks (mobile dark)
+
+![Bookmarks (mobile dark)](screenshots/bookmarks-mobile-dark.png "Bookmarks (mobile dark)")
+
 ## Available Scripts
 
 In the project directory, you can run:
