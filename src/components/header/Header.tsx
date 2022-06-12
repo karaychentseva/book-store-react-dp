@@ -5,6 +5,7 @@ import "./Header.scss";
 import Navigation from "./navigation/Navigation";
 import LangToggle from "./lang-toggle/LangToggle";
 import { useTranslate } from "../../hooks/useTranslate";
+import ThemeToggle from "./theme-toggle/ThemeToggle";
 
 type PropsType = {
     
@@ -31,6 +32,7 @@ const Header: React.FC<PropsType> = () => {
                     </div>
                     <div className="header-right">
                         <Navigation />
+                        <ThemeToggle />
                         <LangToggle />
                     </div>
                 </div>

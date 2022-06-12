@@ -3,6 +3,7 @@ import { bookmarksActions } from "./bookmarks/bookmarksSlice";
 import { searchBooksActions } from "./search-books/searchBooksSlice";
 import { newBooksActions } from "./new-books/newBooksSlice";
 import { languageActions } from "./language/languageSlice";
+import { themeActions } from "./theme/themeSlice";
 
 const actions = {
     ...bookmarksActions,
@@ -10,6 +11,7 @@ const actions = {
     ...searchBooksActions,
     ...newBooksActions,
     ...languageActions,
+    ...themeActions,
 };
 
 export default actions;
