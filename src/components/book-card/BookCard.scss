@@ -1,6 +1,6 @@
 .book-card {
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-background-color);
     border-radius: 10px;
     margin: 15px;
     padding: 15px;
@@ -15,13 +15,14 @@
     }
 
     &__title {
+        color: var(--primary-color);
         margin-bottom: 10px;
         font-size: 1rem;
     }
 
     &__subtitle {
         font-size: 0.9rem;
-        color: #858585;
+        color: var(--primary-lite-color);
         font-family: 'Roboto';
     }
 
@@ -32,6 +33,6 @@
         
     &__price {
         font-weight: 600;
-        color: #28536B;
+        color: var(--price-color);
     }
 }

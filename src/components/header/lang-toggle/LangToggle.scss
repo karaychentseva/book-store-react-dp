@@ -1,11 +1,14 @@
 .toggle-group  {
     &-item.MuiToggleButton-sizeSmall
     {
+        color: var(--lang-toggle-text-color);
         padding: 3px;
         font-size: 0.75rem;
         font-family: 'Rubik';
+        border-color: var(--lang-toggle-border-color);
         &.Mui-selected {
-            background-color: rgb(25 118 210 / 20%);
+            color: var(--lang-toggle-selected-text-color);
+            background-color: var(--lang-toggle-selected-background-color);
         }
     }
 }

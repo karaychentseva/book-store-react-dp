@@ -5,16 +5,43 @@
     display: flex;
     flex-direction: column;
     .search-row {
+        .MuiTextField-root { 
+            background-color: var(--text-field-background-color);
+            border-radius: 4px;
+            .MuiInputLabel-formControl {
+                color: var(--primary-color);
+            }
+            .Mui-focused fieldset {
+                border-color: transparent;
+            }
+            input {
+                color: var(--primary-color);
+            }
+            input:-webkit-autofill {
+                -webkit-text-fill-color: var(--primary-color) !important;
+            }
+         }
         .search-btn {
             margin-left: 25px;
             font-size: 0.75rem;
             line-height: 26px;
+            background-color: var(--search-btn-background-color);
+            &:hover {
+                background-color: var(--search-btn-background-hover-color);
+           
+            }
         }
         margin-bottom: 15px;
     }
     .pagination-row {
         display: flex;
         justify-content: space-around;
+        .MuiPagination-ul .MuiPaginationItem-root {
+            color: var(--primary-color);
+        }
+        .MuiPagination-ul .MuiPaginationItem-root.Mui-selected {
+            background-color: var(--card-background-color);
+        }
     }
 }
 

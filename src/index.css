@@ -3,17 +3,46 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
-  box-sizing: border-box;
+  box-sizing: border-box;  
+}
 
+body {
+  --header-background-color: #e1f3ff;
   --background-color: #ffffff;
-  --card-color: #ffffff;
-  
-  --primary-color: #000000;
-  --primary-color1: #000000;
-  --primary-color2: #000000;
-  --header-color: #000000;
-  --text-color: #000000;
-  --active-color: #000000;
+  --border-color: #dddddd;
+  --primary-color: #3709c2;
+  --primary-lite-color: #858585;
+  --price-color: #28536B;
+  --card-background-color: #f9f9f9;
+  --add-bookmark-icon-color: #929292;
+  --remove-bookmark-icon-color: #d88a00;
+  --lang-toggle-text-color: rgba(0, 0, 0, 0.54);
+  --lang-toggle-selected-text-color: #1976d2;
+  --lang-toggle-selected-background-color: rgb(25 118 210 / 20%);
+  --lang-toggle-border-color: rgb(42 0 0 / 9%);
+  --search-btn-background-color: #1976d2;
+  --search-btn-background-hover-color: #1565c0;
+  --text-field-background-color: #ffffff;
+}
+
+body[data-theme="dark"] {
+  --header-background-color: #2d333b;
+  --background-color: #22272e;
+  --border-color: transparent;
+  --primary-color: #cdd9e5b3;
+  --primary-lite-color: #858585;
+  --price-color: #7698bd;
+  --card-background-color: #32373f;
+  --add-bookmark-icon-color: #929292;
+  --remove-bookmark-icon-color: #d88a00;
+  --lang-toggle-text-color: #cdd9e5b3;
+  --lang-toggle-selected-text-color: #4c94a8;
+  --lang-toggle-selected-background-color: rgb(25 118 210 / 21%);
+  --lang-toggle-border-color: rgb(42 0 0 / 9%);
+
+  --search-btn-background-color: #296c7f;
+  --search-btn-background-hover-color: #317b90;
+  --text-field-background-color: #56606d;
 }
 
 body {
@@ -23,6 +52,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
 }
 
 code {
