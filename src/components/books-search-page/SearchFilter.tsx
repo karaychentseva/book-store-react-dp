@@ -6,6 +6,7 @@ import { useActions } from "../../hooks/useActions";
 import { Pagination } from "@mui/material";
 import "./SearchFilter.scss";
 import { useTranslate } from "../../hooks/useTranslate";
+import { useEffect } from "react";
 
 type PropsType = {
 }
@@ -14,16 +15,19 @@ const PAGE_LIMIT = 10;
 const SearchFilter: React.FC<PropsType> = () => {
 
     const filter = useSelector(state => state.searchBooks.filter);
-    const total = useSelector(state => state.searchBooks.data.total);
+    const total = useSelector(state => state.searchBooks.pageTotal);
     const { setQuery, setPage, searchBooks } = useActions();
     const t = useTranslate();
+
+    useEffect(() => {
+        searchBooks(filter);
+    }, [filter.page]);
 
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setQuery(event.target.value);
     }
     const handleChangePage = (event: React.ChangeEvent<unknown>, value: number) => {
         setPage(value);
-        searchBooks(filter);
     }
     const handleSearchClick = () => {
         searchBooks(filter);
@@ -49,11 +53,13 @@ const SearchFilter: React.FC<PropsType> = () => {
             </div>
             <div className="pagination-row">
                 {
-                    total == 0
+                    total === 0
                      ?
                      <></>
                      :
                     <Pagination 
+                        defaultPage={5}
+                        siblingCount={0}
                         className='pagination'
                         page={filter.page}
                         onChange={handleChangePage}

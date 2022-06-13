@@ -7,28 +7,29 @@
     margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
+    color: var(--primary-color);
 
     &__main {
-        font-size: 24px;
+        font-size: 1.5rem;
         margin-bottom: 4px;
     }
 
     &__secondary {
-        font-size: 16px;
-        color: #858585;
+        font-size: 1rem;
+        color: var(--primary-lite-color);
     }
 
     .add-bookmark-icon {
         cursor: pointer;
         path {
-            fill: #929292;
+            fill: var(--add-bookmark-icon-color);
         }
     }
 
     .remove-bookmark-icon {
         cursor: pointer;
         path {
-            fill: #d88a00;
+            fill: var(--remove-bookmark-icon-color);
         }
     }
 }
@@ -40,7 +41,6 @@
 
     &-image {
         max-width: 35%;
-        min-width: 35%;
         width: 544px;
         border: 1px solid #ddd;
 
@@ -51,7 +51,6 @@
 
     &-info {
         max-width: 55%;
-        min-width: 55%;
 
         text-align: left;
         width: 448px;
@@ -71,14 +70,19 @@
             margin-bottom: 8px;
 
             &__key {
-                color: #858585;
+                color: var(--primary-lite-color);
+                margin-right: 20px;
+            }
+
+            &__value {
+                color: var(--primary-color);
             }
         }
 
         &__price {
             font-weight: 600;
-            color: rgb(40, 83, 107);
-            font-size: 20px;
+            color: var(--price-color);
+            font-size: 1.25rem;
         }
     }
 }
@@ -88,4 +92,28 @@
     margin-bottom: 20px;
     text-align: left;
     font-family: 'Raleway';
+    color: var(--primary-color);
+}
+
+@media (max-width: 460px) {
+    .book-title {
+        margin-bottom: 0;
+    }
+    
+    .details {
+        display: block;
+    
+        &-image {
+            max-width: initial;
+            width: initial;
+
+            margin-bottom: 20px;
+        }
+    
+        &-info {
+            max-width: initial;
+            width: initial;
+            gap: 15px;
+        }
+    }
 }

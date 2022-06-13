@@ -6,6 +6,7 @@ import { searchBooks } from "./searchBooksThunk";
 type StoreType = {
     filter: SearchFilterType,
     data: SearchResultType,
+    pageTotal: number,
     loading: boolean,
     error: boolean,
     errorText: string
@@ -21,6 +22,7 @@ const initialState: StoreType = {
         total: 0,
         books: [],
     },
+    pageTotal: 0,
     loading: false,
     error: false,
     errorText: '',
@@ -53,6 +55,12 @@ const searchBooksSlice = createSlice({
             state.loading = false;
             state.error = false;
             state.data = payload;
+
+            if (state.data.total > 1000) {
+                state.pageTotal = 1000;
+            } else {
+                state.pageTotal = Number(state.data.total);
+            }
         });
     }
 });
