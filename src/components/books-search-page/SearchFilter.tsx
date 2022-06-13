@@ -40,6 +40,7 @@ const SearchFilter: React.FC<PropsType> = () => {
                     id="outlined-basic"
                     label={t('search-filter.search')}
                     variant="outlined"
+                    value={filter.query}
                     onChange={handleSearchChange}
                 />
                 <Button
