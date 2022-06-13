@@ -1,16 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { Themes } from "../../enums/themes";
 
 type StoreType = {
     theme: string
 }
 
-let theme : string = "en";
+let theme : string = Themes.white;
 
 try {
-    theme = localStorage.getItem('theme') || 'en';
+    theme = localStorage.getItem('theme') || Themes.white;
 }
 catch {
-    localStorage.setItem('theme', 'en');
+    localStorage.setItem('theme', Themes.white);
 }
 
 const initialState: StoreType = {
